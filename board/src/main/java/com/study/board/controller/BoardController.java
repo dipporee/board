@@ -30,6 +30,7 @@ public class BoardController {
 		log.info("main에 커밋하기");
 		log.info("디포리");
 		log.info("디포리2");
+		log.info("디포리2");
 	    log.info("boardService.getList() : " + boardService.getList());
 	    
 		model.addAttribute("list", boardService.getList());
