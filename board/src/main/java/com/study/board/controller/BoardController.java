@@ -28,6 +28,7 @@ public class BoardController {
     public String list(Model model) {
 		log.info("BoardController list()");
 		log.info("main에 커밋하기");
+		log.info("디포리");
 	    log.info("boardService.getList() : " + boardService.getList());
 	    
 		model.addAttribute("list", boardService.getList());
