@@ -13,6 +13,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home() {
 		log.info("주석다는 법 이제 System.out.println();는 안녕!!");
+		log.info("새로 커밋");
 		return "index.html";
 	};
 	
