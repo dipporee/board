@@ -27,6 +27,7 @@ public class BoardController {
     @GetMapping("/list")
     public String list(Model model) {
 		log.info("BoardController list()");
+		log.info("main에 커밋하기");
 	    log.info("boardService.getList() : " + boardService.getList());
 	    
 		model.addAttribute("list", boardService.getList());
