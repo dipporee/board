@@ -30,7 +30,7 @@
 			<tbody>
 				<c:forEach items="${list}" var="list" varStatus="status">
 					<tr>
-						<td>${status.count}</td>
+						<td>${status.count}</td> <!-- ${status.count} 여기서 사용한 것이 무엇인지 알아두기 -->
 						<td>${list.memberId}</td>
 						<td><a href="/board/${list.boardId}">${list.title}</a></td>
 						<td>${list.boardDate}</td>

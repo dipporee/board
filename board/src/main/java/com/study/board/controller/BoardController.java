@@ -21,18 +21,15 @@ import lombok.extern.log4j.Log4j2;
 public class BoardController {
 	
 	@Autowired
-	private BoardService boardService;
+	private BoardService boardService; // 서비스
 	
 	//목록 조회
     @GetMapping("/list")
     public String list(Model model) {
-		log.info("BoardController list()");
-		log.info("main에 커밋하기");
-		log.info("디포리");
-		log.info("디포리2");
-		log.info("디포리2");
-	    log.info("boardService.getList() : " + boardService.getList());
-	    
+		log.info("BoardController list()"); 
+		// console에 로그를 찍는 것에 사용 @Log$j2 를 사용하는 것이다.
+		// 함수가 실행되었는지 확인하기 위해서 로그를 작성
+		
 		model.addAttribute("list", boardService.getList());
 	    
 		return "list";
@@ -41,13 +38,9 @@ public class BoardController {
 	//글 조회
     @GetMapping("/board/{boardId}")
     public String contentViewForm(Model model, BoardVO boardVO) {
-		log.info("BoardController contentViewForm() boardVO");
-		log.info("boardVO : " + boardVO);
+		log.info("BoardController contentViewForm()"); 
 	    
 		int boardId = boardVO.getBoardId();
-		
-		log.info("boardId : " + boardId);
-		
 		model.addAttribute("content", boardService.getContent(boardId));
 	    
 		return "contentViewForm";
@@ -124,7 +117,7 @@ public class BoardController {
 
     }
     
-    //글 수정
+    //글 삭제
     @DeleteMapping("/board/{boardId}")
     public ResponseEntity<String> contentDelete(@RequestBody BoardVO boardVO) {
     	log.info("BoardController contentDelete()");
@@ -146,4 +139,5 @@ public class BoardController {
 		return entity;
 
     }
+    
 }
