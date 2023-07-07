@@ -28,7 +28,7 @@ public class BoardController {
     public String list(Model model) {
 		log.info("BoardController list()"); 
 		// console에 로그를 찍는 것에 사용 @Log$j2 를 사용하는 것이다.
-		// 함수가 실행되었는지 확인하기 위해서 로그를 작성
+		// 함수가 실행되었는지 확인하기 위해서 로그를 작성.
 		
 		model.addAttribute("list", boardService.getList());
 	    
