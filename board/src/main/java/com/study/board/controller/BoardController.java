@@ -23,7 +23,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	//목록 조회 //
+	//목록 조회 // //
     @GetMapping("/list")
     public String list(Model model) {
 		log.info("BoardController list()");
