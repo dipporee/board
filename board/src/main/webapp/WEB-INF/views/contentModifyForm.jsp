@@ -15,31 +15,31 @@
 	//수정
 	function contentModify(){
 	   
-		let boardId = $("#boardId").val();
-		let title = $("#title").val();
-		let text = $("#text").val();           
+		let boardId = $("#boardId").val(); // 게시판 순번
+		let title = $("#title").val(); // 제목
+		let text = $("#text").val(); // 글          
        
 		var data = {
-				  boardId 	: boardId
-				, title 	: title
-				, text 		: text
+			  boardId 	: boardId
+			, title 	: title
+			, text 		: text
 		};
 		
-		console.log("data", data);
+		//console.log("data", data);
 		
 		$.ajax({
-			type : "PUT",
-			url : "/board/"+boardId,
-			cache : false,
-			contentType : 'application/json; charset=utf-8',
-			data : JSON.stringify(data),
-			success : function(result) {
+			type : "PUT"
+			,url : "/board/"+boardId
+			,cache : false
+			,contentType : 'application/json; charset=utf-8'
+			,data : JSON.stringify(data)
+			,success : function(result) {
 				if (result == "SUCCESS") {
 					alert("수정되었습니다.");
 					location.href = "/board/"+boardId;
 				}
-			},
-			error : function(e) {
+			}
+			,error : function(e) {
 				alert("수정 실패했습니다.");
 				console.log(e);
 			}

@@ -28,17 +28,17 @@
 		console.log("data", data);
 		
 		$.ajax({
-			type : "POST",
-			url : "/contentWrite",
-			cache : false,
-			data : JSON.stringify(data),
-			contentType : 'application/json; charset=utf-8',
-			success : function(result){
+			type : "POST"
+			,url : "/contentWrite"
+			,cache : false
+			,data : JSON.stringify(data)
+			,contentType : 'application/json; charset=utf-8'
+			,success : function(result){
 				//console.log("result", result);
 				alert("작성되었습니다.");
 				location.href = "/board/"+result;
-			},
-			error : function(e){
+			}
+			,error : function(e){
 				console.log(e);
 				alert("작성 실패하였습니다.");
 			}

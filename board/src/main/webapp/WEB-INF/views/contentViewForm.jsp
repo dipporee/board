@@ -21,21 +21,21 @@
 				  boardId 	: boardId
 		};
 		
-		console.log("data", data);
+		// console.log("data", data);
 		
 		$.ajax({
-			type : "DELETE",
-			url : "/board/"+boardId,
-			cache : false,
-			contentType : 'application/json; charset=utf-8',
-			data : JSON.stringify(data),
-			success : function(result) {
+			type : "DELETE"
+			,url : "/board/"+boardId
+			,cache : false
+			,contentType : 'application/json; charset=utf-8'
+			,data : JSON.stringify(data)
+			,success : function(result) {
 				if (result == "SUCCESS") {
 					alert("삭제되었습니다.");
 					location.href = "/list";
 				}
-			},
-			error : function(e) {
+			}
+			,error : function(e) {
 				alert("삭제 실패했습니다.");
 				console.log(e);
 			}
