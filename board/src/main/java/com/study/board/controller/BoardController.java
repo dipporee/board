@@ -23,29 +23,22 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	//목록 조회 // // //
+	//목록 조회
     @GetMapping("/list")
     public String list(Model model) {
 		log.info("BoardController list()");
-		log.info("main에 커밋하기.");
-		log.info("디포리");
-		log.info("디포리2");
-		log.info("디포리2");
-	    log.info("boardService.getList() : " + boardService.getList());
-	    
 		model.addAttribute("list", boardService.getList());
-	    
+		
 		return "list";
     }
     
-	//글 조회 // // //
+	//글 조회
     @GetMapping("/board/{boardId}")
     public String contentViewForm(Model model, BoardVO boardVO) {
 		log.info("BoardController contentViewForm() boardVO");
 		log.info("boardVO : " + boardVO);
 	    
 		int boardId = boardVO.getBoardId();
-		
 		log.info("boardId : " + boardId);
 		
 		model.addAttribute("content", boardService.getContent(boardId));
@@ -53,7 +46,7 @@ public class BoardController {
 		return "contentViewForm";
     }
     
-	//글쓰기 페이지 // //
+	//글쓰기 페이지
     @GetMapping("/contentWriteForm")
     public String contentWriteForm() {
 		log.info("BoardController contentWriteForm()");
@@ -73,7 +66,6 @@ public class BoardController {
 			boardService.contentWrite(boardVO);		//글쓰기
 			int boardId = boardService.boardId();	//최신 글번호
 			String strBoardId = Integer.toString(boardId);
-			
 			log.info("boardId : " + boardId);
 			
 			entity = new ResponseEntity<String>(strBoardId, HttpStatus.OK);
@@ -94,7 +86,6 @@ public class BoardController {
 		log.info("boardVO : " + boardVO);
 	    
 		int boardId = boardVO.getBoardId();
-		
 		log.info("boardId : " + boardId);
 		
 		model.addAttribute("content", boardService.getContent(boardId));
@@ -111,7 +102,7 @@ public class BoardController {
 		ResponseEntity<String> entity = null;
 
 		try {
-			boardService.contentModify(boardVO);	//글 수정
+			boardService.contentModify(boardVO);
 			
 			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 			

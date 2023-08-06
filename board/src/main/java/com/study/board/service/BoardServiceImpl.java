@@ -48,7 +48,6 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void contentDelete(int boardId) {
 		mapper.contentDelete(boardId);
-		
 	}
 
 }
