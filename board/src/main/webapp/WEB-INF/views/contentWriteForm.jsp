@@ -59,19 +59,19 @@
 			<tr>
 				<td>이름</td>
 				<td>
-					<input id="memberId">
+					<input id="memberId" style="width:100%;">
 				</td>
 			</tr>
 			<tr>
 				<td>제목</td>
 				<td>
-					<input id="title">
+					<input id="title" style="width:100%;">
 				</td>
 			</tr>
 			<tr>
 				<td>내용</td>
 				<td>
-					<textarea rows="10" id="text"></textarea>
+					<textarea rows="10" id="text" style="width:100%;"></textarea>
 				</td>
 			</tr>
 			<tr>

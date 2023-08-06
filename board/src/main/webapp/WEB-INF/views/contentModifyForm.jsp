@@ -68,11 +68,11 @@
 			</tr>
 			<tr>
 				<td>제목</td>
-				<td><input id="title" value="${content.title}"></td>
+				<td><input id="title" value="${content.title}" style="width:100%;"></td>
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea rows="10" id="text">${content.text}</textarea></td>
+				<td><textarea rows="10" id="text" style="width:100%;">${content.text}</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2">
